@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    	"use strict";
+
+        // задача 1
+        let Tf;
+        let Tc;
+        Tc = prompt('Введите температуру в градусах');
+        Tf = (9/5)*Tc + 32;
+        alert(Tc + ' градусов по Цельсию равно '+ Tf + ' градусам по Фаренгейту');
+
+        // задача 2
+        let admin;
+        let name;
+        name = 'Василий';
+        admin = name;
+        alert(admin);
+
+        // задача 3
+
+        // 10 + 10 = 20
+        // 20 + "10" = "2010"
+        let result = 10 + 10 + "10";
+        console.log(result);
+
+        //  10 + "10" = "1010"
+        // "1010" + 10 = "101010" 
+        result = 10 + "10" + 10
+        console.log(result);
+
+        // 10 + 10 = 20
+        // 20 + 10 = 30 
+        result = 10 + 10 + +"10"
+        console.log(result);
+
+        // 10 делим на неопределенное (унарный минус меняет знак неопределенному, получаем Infinity
+        result = 10 / -""
+        console.log(result);
+
+        // 10 делим на NaN (2,5 с запятой, унарный + не может преобразовать эту строку в число)
+        result = 10 / +"2,5"
+        console.log(result);
+
+    </script>
+</body>
+</html>
