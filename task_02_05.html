@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    	"use strict";
+
+        // задача 5
+        let a = -4
+        let b = 5
+        
+        function sum(x, y){
+            return x + y
+        }
+
+        function subtract(x, y){
+            return x - y
+        }
+
+        function mult(x, y){
+            return x * y
+        }
+
+        function div(x, y){
+            return x / y
+        }
+
+        function mathOperation(arg1, arg2, operation){
+            switch (operation){
+                case "sum":
+                    return sum(arg1, arg2)
+                    break
+                case "subtract":
+                    return subtract(arg1, arg2)
+                    break
+                case "mult":
+                    return mult(arg1, arg2)
+                    break
+                case "div":
+                    return div(arg1, arg2)
+                    break
+            }
+            return NaN
+        }
+        let result = mathOperation(1, 2, "summa")
+        if (isNaN(result)){
+            alert("введена неизвестная команда")
+        }
+
+        alert(mathOperation(1, 2, "sum"))
+        alert(mathOperation(1, 2, "subtract"))
+        alert(mathOperation(1, 2, "mult"))
+        alert(mathOperation(1, 2, "div"))
+
+
+    </script>
+</body>
+</html>
