@@ -23,8 +23,16 @@
                 price: 1000,
             },
         ];
-        price.forEach(products) = price * 0.75
-        console.log(price.forEach(products));
+
+        function diskount(percent) {
+            percent.price = percent.price * 0.85
+        }
+        products.forEach(diskount)
+
+        function print(params) {
+            console.log(params.id + " " + params.price)
+        }
+        products.forEach(print)
 
     </script>
 </body>
