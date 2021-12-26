@@ -37,7 +37,15 @@
         ];
 
         function fotoEnable(value){
-            return value.photos.length > 0
+            if (typeof value['photos'] !== "undefined"){
+                if (value.photos.length > 0){
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
         }
         const foto = products.filter(fotoEnable)
         console.log(foto)
