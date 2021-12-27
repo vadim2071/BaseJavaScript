@@ -10,11 +10,34 @@
 
         // задача 1
 
-        const Number = {
-            units,
-            tens,
-            hundreds
+        function Number (hundreds, tens, units){
+            this.hundreds = hundreds;
+            this.tens = tens;
+            this.units = units;
         }
+
+        function decomp(input){
+            const Out = new Number(0, 0, 0)
+            if (0 <= input <= 999){
+                let temp = String(input)
+                if (temp.length == 3){
+                    Out.units = Number(temp[2])
+                    Out.tens = Number(temp[1])
+                    Out.hundreds = Number(temp[0])
+                }else if(temp.length == 2){
+                    Out.units = Number(temp[1])
+                    Out.tens = Number(temp[0])
+                }else{
+                    Out.units = Number(temp[0])
+                }
+            }
+            return Out
+        }
+        const c = new Number(0,0,0)
+        c = decomp(526)
+        console.log(c.hundreds + " " + c.tens + " " + c.units)
+        c = decomp(348)
+        console.log(c.hundreds + " " + c.tens + " " + c.units)
 
     </script>
 </body>
