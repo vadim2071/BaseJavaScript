@@ -10,14 +10,14 @@
 
         // задача 1
 
-        function Number (hundreds, tens, units){
+        function Num (hundreds, tens, units){
             this.hundreds = hundreds;
             this.tens = tens;
             this.units = units;
         }
 
         function decomp(input){
-            const Out = new Number(0, 0, 0)
+            var Out = new Num(0, 0, 0)
             if (0 <= input <= 999){
                 let temp = String(input)
                 if (temp.length == 3){
@@ -33,10 +33,12 @@
             }
             return Out
         }
-        const c = new Number(0,0,0)
+        var c = new Num(0,0,0)
         c = decomp(526)
         console.log(c.hundreds + " " + c.tens + " " + c.units)
-        c = decomp(348)
+        c = decomp(48)
+        console.log(c.hundreds + " " + c.tens + " " + c.units)
+        c = decomp(4)
         console.log(c.hundreds + " " + c.tens + " " + c.units)
 
     </script>
