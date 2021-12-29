@@ -10,13 +10,20 @@
 
         // задача 1.2
 
-        function ProductEs5 (name, price){
-            this.name = name;
-            this.price = price;
+        function PostEs5 (author, text, date ){
+            this.author = author;
+            this.text = text;
+            this.date = date;
         }
 
-        ProductEs5.prototype.make25PercentDiscount = function(){
-            this.price = this.price * 0.75;
+        PostEs5.prototype.edit = function(text){
+            this.text = text;
+        }
+
+        function AttachedPost = function(author, text, date ){
+            PostEs5.call(author, text, date )
+            this.highlighted = false;
+
         }
 
         let product1 = new ProductEs5("prod1", 100)
