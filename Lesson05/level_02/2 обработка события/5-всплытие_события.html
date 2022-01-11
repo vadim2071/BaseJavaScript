@@ -12,10 +12,10 @@
             <button>Кнопка</button>
         </li>
         <li>
-            <button>Кнопка</button>
+            <button>Кнопка1</button>
         </li>
         <li>
-            <button>Кнопка</button>
+            <button>Кнопка2</button>
         </li>
     </ul>
 
@@ -24,7 +24,12 @@
     объект события, передаваемый в функцию-обработчик клика. -->
 
     <script>
-        
+        "use strict";
+        let link = document.querySelector('ul');
+        link.addEventListener('click', function(event){
+            console.log(event.target)
+        })
+
     </script>
 </body>
 </html>
