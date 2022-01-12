@@ -41,10 +41,16 @@
     -->
 
     <script>
+        let products = document.querySelectorAll('.product')
+
+        products.forEach(function(product){
+            product.addEventListener('click', buttonClickHandler)
+        })
         
 		
 		function buttonClickHandler(event) {
-		
+            event.target.parentNode.style.background = 'lightgreen'
+            event.target.innerText = 'Добавлено'
 		}
     </script>
 </body>
