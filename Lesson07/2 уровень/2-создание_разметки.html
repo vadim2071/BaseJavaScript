@@ -19,7 +19,11 @@
         ниже:
         <img src="https://picsum.photos/200/300?random=${счетчик_цикла_здесь}" alt="pic${счетчик_цикла_здесь}">
         */
-       
+       let url = 'https://picsum.photos/200/300?random'
+       let altAttr = 'pic'
+       for (let i = 3; i > 0; i--){
+        document.body.insertAdjacentHTML('afterbegin', `<img src="${url}${i}" alt="${altAttr}${i}">`);
+       }
     </script>
 </body>
 </html>
