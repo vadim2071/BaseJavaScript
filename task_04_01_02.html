@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    	"use strict";
+
+        // задача 1.2 стиль es5
+
+        function PostEs5 (author, text, date ){
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        PostEs5.prototype.edit = function(new_text){
+            this.text = new_text;
+        }
+
+        function AttachedPost(author, text, date ){
+            PostEs5.call(this, author, text, date )
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(PostEs5.prototype);
+        AttachedPost.prototype.constructor = AttachedPost
+
+        AttachedPost.prototype.makeTextHighlighted = function(){
+            this.highlighted = true
+        }
+
+        let post1 = new PostEs5("VasiliiEs5", "Ghjdthrf ntrcnf", "10/03/2021")
+        console.log(post1)
+        post1.edit("Проверка текста")
+        console.log(post1)
+
+        let post11 = new AttachedPost("PetrovEs5", "Ghjdthrf ntrcnf", "10/03/2021")
+        console.log(post11)
+        post11.edit("Проверка текста")
+        console.log(post11)
+        post11.makeTextHighlighted()
+        console.log(post11)
+
+        // задача 1.2 стиль es6
+
+
+        class PostEs6 {
+            constructor(author, text, date){
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            edit(new_text){
+                this.text = new_text;
+            }
+        }
+
+        class AttachedPostEs6 extends PostEs6{
+            constructor(author, text, date){
+                super(author, text, date);
+                this.highlighted = false;
+            }
+            makeTextHighlighted(){
+                this.highlighted = true;
+            }
+
+        }
+
+        let post2 = new PostEs6("VasiliiEs6", "Ghjdthrf ntrcnf", "10/03/2021")
+        console.log(post2)
+        post2.edit("Проверка текста")
+        console.log(post2)
+
+        let post21 = new AttachedPostEs6("PetrovEs6", "Ghjdthrf ntrcnf", "10/03/2021")
+        console.log(post21)
+        post21.edit("Проверка текста")
+        console.log(post21)
+        post21.makeTextHighlighted()
+        console.log(post21)
+    </script>
+</body>
+</html>
